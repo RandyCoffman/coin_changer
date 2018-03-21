@@ -28,9 +28,10 @@ post "/change-selector" do
 end
 
 get "/change-you-get-back" do
+	cents = session[:cents]
 	name = session[:name]
 	session[:results]
-	erb :final_page, locals:{name: name, results: session[:results]}
+	erb :final_page, locals:{name: name, cents: cents, results: session[:results]}
 end
 	post "/return" do
 		name = params[:name]
